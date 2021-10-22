@@ -36,7 +36,13 @@ export default function AddInput({ submitHandler }) {
       />
       <SubmitButton
         onPress={() => {
-          setValue(submitHandler(value, date));
+          if (value.trim().length == 0) {
+            alert("กรุณากรอกข้อมูล !!")
+          }
+          else {
+            setValue(submitHandler(value, date));
+          }
+
         }}
       >
         <AntDesign name="plus" size={24} color="midnightblue" />
